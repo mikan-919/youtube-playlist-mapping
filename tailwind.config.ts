@@ -60,6 +60,16 @@ export default {
         notoSans: ['var(--font-Noto_Sans_JP)'],
         notoSerif: ['var(--font-Noto_Serif_JP)'],
       },
+      keyframes: {
+        gradient: {
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' },
+        },
+      },
+      animation: {
+        'gradient-animation': 'gradient 15s ease infinite',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

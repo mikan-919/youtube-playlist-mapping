@@ -15,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja' suppressHydrationWarning>
-      <body className={`${variables} body font-Sans`}>
+      <body
+        className={`${variables} body font-Sans h-screen p-0 m-0 overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 animate-gradient-animation `}
+      >
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

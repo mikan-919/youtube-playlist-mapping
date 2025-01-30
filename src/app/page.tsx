@@ -1,10 +1,10 @@
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+'use client';
+import ThemeChangeButton from '@/components/ThemeChangeButton';
 
 export default function Home() {
   return (
-    <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 '>
-      <Button className='font-notoSans'>あいうえおHi!</Button>
+    <div className='items-center justify-items-center h-[calc(100dvh-2rem)] m-4 p-4 shadow-md rounded-lg bg-background'>
+      <ThemeChangeButton />
     </div>
   );
 }
