@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { variables } from '@/lib/fonts';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Youtube Playlist Mapping',
@@ -24,7 +25,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className='h-[calc(100dvh-2rem)] overflow-hidden overflow-y-auto no-scrollbar m-4 shadow-md rounded-lg bg-background'>
+            <Header />
+            <div className='min-h-full p-4 flex justify-center items-center'>
+              {children}
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

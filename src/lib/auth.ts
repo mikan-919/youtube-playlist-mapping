@@ -14,7 +14,20 @@ declare module 'next-auth/jwt' {
   }
 }
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [Google({})],
+  providers: [
+    Google({
+      authorization: {
+        params: {
+          prompt: 'consent',
+          access_type: 'offline',
+          response_type: 'code',
+          scope:
+            'openid email profile https://www.googleapis.com/auth/youtube.readonly',
+        },
+      },
+    }),
+  ],
+  session: { strategy: 'jwt' },
   callbacks: {
     async jwt({ token, account }) {
       if (account) {
